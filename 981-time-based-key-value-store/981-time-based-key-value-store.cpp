@@ -1,6 +1,6 @@
 class TimeMap {
 public:
-    map<string, vector<pair<int, string>>> arr;
+    unordered_map<string, vector<pair<int, string>>> arr;
     TimeMap() {
         
     }
