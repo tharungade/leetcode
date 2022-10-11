@@ -2,7 +2,7 @@ class Solution {
 public:
     bool increasingTriplet(vector<int>& nums) {
         int n = nums.size();
-        vector<int> leftMin(n), rightMax(n);
+        vector<int> leftMin(n);
         int minInd = 0;
         for(int i = 0; i < n; i++)
         {
@@ -11,17 +11,13 @@ public:
                 minInd = i;
         }
         int maxInd = n-1;
-        for(int i = n-1; i >= 0; i--)
+        for(int i = n-2; i >= 0; i--)
         {
-            rightMax[i] = maxInd;
+            if(nums[leftMin[i]] < nums[i] && nums[maxInd] > nums[i])
+                return true;
+            
             if(nums[i] > nums[maxInd])
                 maxInd = i;
-        }
-        
-        for(int i = 1; i < n-1; i++)
-        {
-            if(nums[leftMin[i]] < nums[i] && nums[rightMax[i]] > nums[i])
-                return true;
         }
         
         return false;;
