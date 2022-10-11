@@ -13,8 +13,6 @@ class Solution {
                 mini = temp;       
             }        
         }  
-        for(auto & i : nums) cout << i << " "; 
-        cout << endl;
         int maxi = nums[n-1];     
         for(int i = n-2; i >= 0; i--)        
         {           
