@@ -10,20 +10,19 @@
  */
 class Solution {
 public:
-    int giveLen(ListNode* head)
-    {
-        if(head == NULL)
-            return 0;
-        
-        return 1 + giveLen(head->next);
-    }
     ListNode* deleteMiddle(ListNode* head) {
         if(head->next == NULL)
             return NULL;
         
-        int len = giveLen(head);
-        int mid = len/2;
+        int len = 0;
         ListNode *temp = head;
+        while(temp != NULL)
+        {
+            len++;
+            temp = temp->next;
+        }
+        int mid = len/2;
+        temp = head;
         for(int i = 1; i < mid; i++)
             temp = temp->next;
         temp->next = temp->next->next;
