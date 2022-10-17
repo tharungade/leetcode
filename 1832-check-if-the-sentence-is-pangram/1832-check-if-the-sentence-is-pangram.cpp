@@ -1,14 +1,10 @@
 class Solution {
 public:
     bool checkIfPangram(string sentence) {
-        int arr[26] = {0};
+        int stor = 0;
         for(auto & i : sentence)
-            arr[i-'a']++;
+            stor = stor | (1 << (i-'a'));
         
-        for(auto & i : arr)
-            if(i == 0)
-                return false;
-        
-        return true;
+        return stor + 1 == (1 << 26);
     }
 };
