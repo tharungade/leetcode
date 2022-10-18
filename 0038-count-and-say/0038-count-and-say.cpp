@@ -17,9 +17,10 @@ public:
         return res;
     }
     string countAndSay(int n) {
-        if(n == 1)
-            return "1";
+       string res = "1";
+       for(int i = 0; i < n-1; i++)
+           res = sayString(res);
         
-        return sayString(countAndSay(n-1));
+        return res;
     }
 };
