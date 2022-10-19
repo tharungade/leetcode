@@ -14,7 +14,7 @@ public:
         vector<string> res;
         priority_queue< pair<int,string>, vector<pair<int,string>>, myComparator > minHeap;
         
-        map<string, int> mp;
+        unordered_map<string, int> mp;
         for(auto & i : words) mp[i]++;
         
        for(auto & i : mp)
