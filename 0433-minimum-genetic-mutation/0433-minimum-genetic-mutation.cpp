@@ -14,25 +14,29 @@ public:
         return count == 1;
     }
     int minMutation(string start, string end, vector<string>& bank) {
-        queue<pair<pair<string,string>, int>> q; // string parent no.ofsteps
+       queue<pair<string,int>> q;
+       unordered_set<string> s;
         
-        q.push({{start,""}, 0});
-        
-        while(q.size() > 0)
-        {
-            auto curr = q.front();
-            if(curr.first.first == end)
-                return curr.second;
-            
-            for(auto & i : bank)
-            {
-                if(i != curr.first.second && mutation(curr.first.first, i))
-                    q.push({{i,curr.first.first}, curr.second + 1});
-            }
-            
-            q.pop();
-        }
-        
+       q.push({start, 0});
+       s.insert(start);
+       while(q.size() > 0)
+       {
+           auto curr = q.front();
+           
+           if(curr.first == end)
+               return curr.second;
+           
+           for(auto & i: bank)
+           {
+               if(s.find(i) == s.end() && mutation(curr.first, i)){
+                   q.push({i, curr.second + 1});
+                   s.insert(i);
+               }
+           }
+           
+           q.pop();
+       }
+    
         return -1;
     }
 };
