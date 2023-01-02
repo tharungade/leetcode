@@ -25,29 +25,23 @@ struct Node
 
 class Solution {
   public:
+    void helper(int currVal, Node* node, vector<int> &res)
+    {
+        if(node == NULL)
+            return;
+        
+        if(res.size() < currVal)
+            res.push_back(node->data);
+        else
+            res[currVal-1] = max(node->data, res[currVal-1]);
+        
+        helper(currVal+1, node->left, res);
+        helper(currVal+1, node->right, res);
+    }
     vector<int> maximumValue(Node* node) {
         //code here
         vector<int> res;
-        queue<Node*> q;
-        q.push(node);
-        
-        while(q.size() > 0)
-        {
-            int siz = q.size();
-            int maxi = INT_MIN;
-            for(int i = 0; i < siz; ++i)
-            {
-                auto curr = q.front();
-                q.pop();
-                maxi = max(maxi, curr->data);
-                if(curr->right)
-                    q.push(curr->right);
-                if(curr->left)
-                    q.push(curr->left);
-            }
-            res.push_back(maxi);
-        }
-        
+        helper(1, node, res);
         return res;
     }
 };
