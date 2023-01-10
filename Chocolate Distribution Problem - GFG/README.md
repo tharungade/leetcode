@@ -6,7 +6,7 @@
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input:
+<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
 </strong>N = 8, M = 5</span>
 <span style="font-size:18px">A = {3, 4, 1, 9, 56, 7, 9, 12}<strong>
 Output: </strong>6
@@ -14,18 +14,18 @@ Output: </strong>6
 maximum chocolates and minimum chocolates 
 is 9 - 3 = 6 by choosing following M packets :
 {3, 4, 9, 7, 9}.</span>
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input:
+<pre style="position: relative;"><span style="font-size:18px"><strong>Input:
 </strong>N = 7, M = 3</span>
 <span style="font-size:18px">A = {7, 3, 2, 4, 9, 12, 56}
 <strong>Output: </strong>2
 <strong>Explanation: </strong>The minimum difference between
 maximum chocolates and minimum chocolates
 is 4 - 2 = 2 by choosing following M packets :
-{3, 2, 4}.</span></pre>
+{3, 2, 4}.</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><span style="font-size:18px"><strong>Your&nbsp;Task:</strong><br>
 You don't need to take any input or print anything. Your task is to complete the function&nbsp;<strong>findMinDiff()&nbsp;</strong>which takes array A[ ], N and M as input parameters&nbsp;and returns the minimum possible difference&nbsp;between maximum number of chocolates given to a student and minimum&nbsp;number of chocolates given to a student.</span></p>
