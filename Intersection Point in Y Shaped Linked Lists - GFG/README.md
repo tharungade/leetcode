@@ -6,18 +6,18 @@
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input:</strong><strong>
+<pre><span style="font-size:18px"><strong>Input:</strong><strong>
 </strong>LinkList1 = 3-&gt;6-&gt;9-&gt;common
 LinkList2 = 10-&gt;common
 common = 15-&gt;30-&gt;NULL
 <strong>Output: 1</strong>5
 <strong>Explanation:
 </strong><img alt="Y ShapedLinked List" class="aligncenter size-full wp-image-2753" src="https://contribute.geeksforgeeks.org/wp-content/uploads/linked.jpg" style="height:334px; width:388px" title="Y ShapedLinked List"></span>
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre style="position: relative;"><span style="font-size:18px"><strong>Input: 
+<pre><span style="font-size:18px"><strong>Input: 
 </strong>Linked List 1 = 4-&gt;1-&gt;common
 Linked List 2 = 5-&gt;6-&gt;1-&gt;common
 common = 8-&gt;4-&gt;5-&gt;NULL
@@ -34,7 +34,7 @@ common = 8-&gt;4-&gt;5-&gt;NULL
    <strong>|
 </strong><span style="font-size:18px"><strong>  5</strong></span>
 <span style="font-size:18px"><strong>  |</strong></span>
-<span style="font-size:18px"><strong>  NULL       </strong></span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<span style="font-size:18px"><strong>  NULL       </strong></span></pre>
 
 <p><span style="font-size:18px"><strong>Your Task:</strong><br>
 You don't need to read input or print anything. The task is to complete the function <strong>intersetPoint</strong>() which takes the pointer to the head of linklist1(<strong>head1</strong>) and linklist2(<strong>head2</strong>) as input parameters and&nbsp;returns data value of a node where two linked lists intersect. If linked list do not merge at any point, then it should&nbsp;return <strong>-1</strong>.</span><br>
