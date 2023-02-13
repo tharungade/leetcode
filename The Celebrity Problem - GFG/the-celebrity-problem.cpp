@@ -14,34 +14,32 @@ class Solution
     int celebrity(vector<vector<int> >& M, int n) 
     {
         // code here 
-        for(int i = 0; i < n; ++i)
+        stack<int> stk;
+        for(int i = 0; i < n;++i)
+            stk.push(i);
+        int one, another, mayBeCelebrity;
+        while(true)
         {
-            bool heKnows = false;
-            for(int j = 0; j < n; ++j)
+            int one = stk.top();
+            stk.pop();
+            if(stk.empty())
             {
-                if(i != j && M[i][j] == 1)
-                {
-                    heKnows = true;
-                    break;
-                }
+                mayBeCelebrity = one;
+                break;
             }
-            if(heKnows == false)
-            {
-                bool allKnows = true;
-                for(int j = 0; j < n; ++j)
-                {
-                    if(i != j && M[j][i] == 0)
-                    {
-                        allKnows = false;
-                        break;
-                    }
-                }
-                if(allKnows)
-                    return i;
-            }
+            another = stk.top();
+            stk.pop();
+            if(M[one][another])
+                stk.push(another);
+            else
+                stk.push(one);
         }
         
-        return -1;
+        for(int i = 0; i < n; ++i)
+            if(i != mayBeCelebrity && (M[mayBeCelebrity][i] == 1 || M[i][mayBeCelebrity] == 0))
+                return -1;
+        
+        return mayBeCelebrity;
     }
 };
 
