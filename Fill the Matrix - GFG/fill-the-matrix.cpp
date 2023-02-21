@@ -9,47 +9,18 @@ using namespace std;
 
 class Solution{   
 public:
-    bool isValid(int x, int y, int N, int M, vector<vector<int>>& visited)
+    int helper(int x1, int y1, int x2, int y2)
     {
-        return x >= 0 && y >= 0 && x < N && y < M && !visited[x][y];
+        return abs(x1-x2) + abs(y1-y2);
     }
     int minIteration(int N, int M, int x, int y){    
         // code here
-        pair<int,int> dir[4] = {
-                                {+1, 0},
-                                {-1, 0},
-                                {0, +1},
-                                {0, -1}
-                                };
-        queue<pair<int,int>> q;
-        vector<vector<int>> visited(N, vector<int> (M, 0));
-        x--;
-        y--;
-        visited[x][y] = 1;
-        q.push({x, y});
-        int count = -1;
-        while(q.size() > 0)
-        {
-            count++;
-            int siz = q.size();
-            for(int i = 0;i < siz; ++i)
-            {
-                auto curr = q.front();
-                for(int j = 0; j < 4; ++j)
-                {
-                    x = curr.first + dir[j].first;
-                    y = curr.second + dir[j].second;
-                    if(isValid(x, y, N, M, visited))
-                    {
-                        visited[x][y] = 1;
-                        q.push({x, y});
-                    }
-                }
-                q.pop();
-            }
-        }
+        return max({helper(x, y, 1, 1), 
+                    helper(x, y, 1, M),
+                    helper(x, y, N, 1),
+                    helper(x, y, N, M)
+        });
         
-        return count;
     }
 };
 
